@@ -34,7 +34,9 @@
   
       <hr>
       <div class="checkout">
-          <%= link_to("確認結賬", checkout_carts_path , :method => :post , :class => "btn btn-primary btn-lg btn-danger pull-right") %>
+          <%= link_to("確認結賬", checkout_carts_path , :method => :post , :class => "btn btn-lg btn-warning pull-right") %>
+          <%= link_to "清除購物車", clean_carts_path, :method => :delete, :class => "btn  btn-lg btn-danger pull-right" %>
+          <%= link_to "繼續瀏覽", products_path, :class => "btn btn-primary btn-lg pull-right" %>
       </div>
  
  
