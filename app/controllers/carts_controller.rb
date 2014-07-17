@@ -13,8 +13,9 @@ class CartsController < ApplicationController
 
 	def clean
 		@cart = current_cart
-		@item = @cart.items
+		@item = @cart.cart_items
 		@item.delete_all
 		redirect_to carts_path
 	end
+
 end

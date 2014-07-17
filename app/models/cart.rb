@@ -3,13 +3,13 @@ class Cart < ActiveRecord::Base
 	has_many :items, :through => :cart_items, :source => :product
 
 	def add_product_to_cart(product)
-		items << product
+			items << product
 	end
 
 	def total_price
 		sum = 0
 		items.each do |i|
-			sum = sum + i.price
+			sum = sum + i.price * i.quantity
 		end
 		sum
 		#items.inject(0) {|sum, item| sum + item.price }

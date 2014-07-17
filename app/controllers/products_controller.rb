@@ -14,8 +14,12 @@ class ProductsController < ApplicationController
   def add_to_cart
   	@product = Product.find(params[:id])
   	if !current_cart.items.include?(@product)
-  		current_cart.add_product_to_cart(@product)
-  		flash[:notice] = "成功將 #{@product.title} 加入購物車"
+    	if @product.quantity > 0
+        current_cart.add_product_to_cart(@product)
+    		flash[:notice] = "成功將 #{@product.title} 加入購物車"
+      else
+        flash[:notice] = "已售完，無法加入購物車"
+      end
   	else
   		flash[:warning] = "購物車內已經有此商品"
   	end
