@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_cart
 
   def admin_required
-  	current_user.admin?
+      if !current_user.is_admin  
+        flash[:notice] = "只有管理員能進入該頁面"
+        redirect_to products_path
+      end
   end
 
   def current_cart

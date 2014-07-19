@@ -1,6 +1,5 @@
 class Admin::ProductsController < ApplicationController
-	before_action :authenticate_user!
-	before_action :admin_required
+	before_action :authenticate_user!, :admin_required
 
 	def index
 		if params[:search]
