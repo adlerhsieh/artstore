@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  namespace :account do
+  get 'orders/index'
+  end
+
+  namespace :account do
+  get 'orders/show'
+  end
+
   devise_for :users
   namespace :admin do
     resources :products do

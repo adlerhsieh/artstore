@@ -13,7 +13,7 @@ def destroy
 	@cart = current_cart
 	@item = @cart.cart_items.find(params[:id])
 	@item.destroy
-	redirect_to carts_path
+	redirect_to :back
 end
 
 	private

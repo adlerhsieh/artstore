@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-	before_action :authenticate_user!, :inly => [:checkout]
+	before_action :authenticate_user!, :only => [:checkout]
 
 	def index
 		@cart = current_cart.items.all

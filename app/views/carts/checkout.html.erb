@@ -8,16 +8,19 @@
         <tr>
           <th width="80%">商品明細</th>
           <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
         </tr>
       </thead>
       <tbody>
         <% current_cart.items.each do |product| %>
         <tr>
           <td>           
- 
             <%= link_to(product.title, admin_product_path(product)) %>
           </td>
           <td> <%= product.price %> </td>
+          <td> <%= product.quantity %> </td>
+          <td> <%= render_cart_item_total_price(product) %> </td>
         </tr>
         <% end %>
  

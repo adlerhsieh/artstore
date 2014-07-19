@@ -8,15 +8,19 @@
         <tr>
           <th width="80%">商品明細</th>
           <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
         </tr>
       </thead>
       <tbody>
-        <% @order_items.each do |order_item| %>
+        <% @order.items.each do |product| %>
         <tr>
           <td>           
-            <%= order_item.product_name %>
+            <%= link_to(product.product_name, admin_product_path(product)) %>
           </td>
-          <td> <%= order_item.price %> </td>
+          <td> <%= product.price %> </td>
+          <td> <%= product.quantity %> </td>
+          <td> <%= render_order_item_total_price(product) %> </td>
         </tr>
         <% end %>
  
