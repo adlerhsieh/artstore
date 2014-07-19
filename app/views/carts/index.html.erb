@@ -15,7 +15,7 @@
       </thead>
       <tbody>
 
-        <% current_cart.cart_items.each do |item| %>
+       <% current_cart.cart_items.each do |item| %>
         <tr>
           <td><%= render_product_image(item.product.default_image) %></td>
           <td><%= form_for item, :url => cart_item_path(current_cart, item) do |f| %>
@@ -34,7 +34,6 @@
           <td> <%= item.product.price %> </td>
         </tr>
         <% end %>
-
         </tbody>
       </table>
  
