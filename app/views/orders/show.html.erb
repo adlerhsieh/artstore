@@ -3,24 +3,24 @@
  
     <h2> 訂單明細 </h2>
  
-    <table class="table table-bordered">
+<table class="table table-bordered">
       <thead>
         <tr>
           <th width="80%">商品明細</th>
           <th>單價</th>
           <th>數量</th>
-          <th>總價</th>
+          <th>小計</th>
         </tr>
       </thead>
       <tbody>
-        <% @order.items.each do |product| %>
+        <% current_cart.cart_items.each do |item| %>
         <tr>
           <td>           
-            <%= link_to(product.product_name, admin_product_path(product)) %>
+            <%= link_to(item.product.title, product_path(item)) %>
           </td>
-          <td> <%= product.price %> </td>
-          <td> <%= product.quantity %> </td>
-          <td> <%= render_order_item_total_price(product) %> </td>
+          <td> <%= item.product.price %> </td>
+          <td> <%= item.quantity %> </td>
+          <td> <%= single_item_total_price(item) %> </td>
         </tr>
         <% end %>
  

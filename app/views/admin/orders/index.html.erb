@@ -6,6 +6,7 @@
 		<th>訂單編號</th>
 		<th>訂購者</th>
 		<th>成立時間</th>
+		<th>價格</th>
 		<th>狀態</th>
 	</thead>	
 	<tbody>
@@ -19,6 +20,9 @@
 			</td>
 			<td>
 				<%= o.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %>
+			</td>
+			<td>
+				<%= o.total %>
 			</td>
 			<td>
 				<%= render_order_state(o.aasm_state) %>
