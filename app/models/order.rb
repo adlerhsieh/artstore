@@ -53,7 +53,7 @@ class Order < ActiveRecord::Base
 		end
 
 		state :order_cancelled
-		event :cancel_order do
+		event :cancel_the_order do
 			transitions :from => [:order_placed, :paid], :to => :order_cancelled
 		end
 

@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   resources :orders do
     member do
       get :pay_with_credit_card
+      get :cancel
     end
   end
   root to: "products#index"

@@ -30,6 +30,13 @@ class OrdersController < ApplicationController
     @order_items = @order.items
   end
 
+  def cancel
+    @order = current_user.orders.find_by_token(params[:id])
+    @order.cancel_the_order!
+    #為何更改訂單狀態一定需要加驚嘆號？
+    redirect_to account_orders_path 
+  end
+
   private
  
   def order_params

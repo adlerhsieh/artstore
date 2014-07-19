@@ -5,6 +5,8 @@ module OrdersHelper
 
 	def render_order_state(state)
 		case state
+		when "order_placed"
+			"待付款"
 		when "paid"
 			"已付款"
 		when "shipping"
@@ -16,7 +18,7 @@ module OrdersHelper
 		when "good_returned"
 			"辦理退貨"
 		else
-			"待付款"
+			"else"
 		end
 	end
 end
