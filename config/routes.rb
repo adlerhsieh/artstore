@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :account do
-  get 'orders/index'
-  end
-
-  namespace :account do
-  get 'orders/show'
+    resources :orders
   end
 
   devise_for :users
+
   namespace :admin do
     resources :products do
       member do
@@ -16,6 +13,7 @@ Rails.application.routes.draw do
         delete :destroy_image
       end
     end
+    resources :orders
   end
 
   resources :products do

@@ -13,15 +13,11 @@
 		<%= link_to "我的商店", products_path, :class => "navbar-brand" %>
 	</div>
 	<div class="navbar-form navbar-right">
-		<div> 
-          <%= link_to carts_path do  %>
-            購物車 <i class="glyphicon glyphicon-shopping-cart"> </i> (<%= cart_items_count(current_cart) %>)
-          <% end %>
-        </div>
+		<%= link_to "購物車 (#{cart_items_count(current_cart)})", carts_path, :class => "btn btn-default"  %>
 <% if !current_user %>
 	<%= link_to "登入", new_user_session_path, :class => "btn btn-default" %>&nbsp;<%= link_to "註冊", new_user_registration_path, :class => "btn btn-default", :style => "margin-right: 10px;" %>
 <% else %>
-	<%= current_user.email %>&nbsp;<%= link_to "管理後台首頁", admin_products_path, :class => "btn btn-default" %>&nbsp;<%= link_to "登出", destroy_user_session_path, :method => :delete, :class => "btn btn-default", :style => "margin-right: 10px;" %></p>
+	<%= current_user.email %>&nbsp;<%= link_to "管理後台", admin_products_path, :class => "btn btn-default" %><%= link_to "我的訂單", account_orders_path, class: "btn btn-default" %>&nbsp;<%= link_to "登出", destroy_user_session_path, :method => :delete, :class => "btn btn-default", :style => "margin-right: 10px;" %></p>
 <% end %>
 		
 	</div>

@@ -1,7 +1,5 @@
 class Account::OrdersController < ApplicationController
   def index
-  end
-
-  def show
+  	@order = current_user.orders.all
   end
 end

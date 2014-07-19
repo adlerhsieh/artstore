@@ -3,7 +3,8 @@ class OrdersController < ApplicationController
  
   def create
     @order = current_user.orders.build(order_params)
- 
+    @cart = current_cart
+
     if @order.save
       @order.build_item_cache_from_cart(current_cart)
       @order.calculate_total!(current_cart)

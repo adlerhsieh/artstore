@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-12"><span class="page_title">後台管理</span><%= link_to "新產品", new_admin_product_path, :class=> "btn btn-primary", :style => "margin-left: 20px; width: 80px" %><div>
+	<div class="col-md-12"><span class="page_title">後台管理</span><%= link_to "新產品", new_admin_product_path, :class=> "btn btn-primary", :style => "margin-left: 20px; width: 80px" %>&nbsp;<%= link_to "所有訂單", admin_orders_path, :class => "btn btn-primary" %><div>
 	<div class="col-md-12 alignright">
 		<%= form_tag admin_products_path, method: :get do %>
 			<%= text_field_tag :search, params[:search], placeholder: "搜尋" %>
