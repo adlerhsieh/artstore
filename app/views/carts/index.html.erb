@@ -23,17 +23,18 @@
             <%= f.submit "確定數量" %>
             <% end %>
           </td>
-          <td><%= link_to cart_item_path(current_cart, item), :method => :delete do %>
-                <i class="glyphicon glyphicon-trash"></i>
-              <% end %>
-            </td>
-            <td> 
-              <%= link_to(item.title, admin_product_path(item)) %>
-            </td>
-            <td> <%= item.price %> </td>
-          </tr>
-          <% end %>
- 
+          <td>
+            <%= link_to cart_item_path(current_cart, item), :method => :delete do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+          </td>
+          <td> 
+            <%= link_to(item.title, admin_product_path(item)) %>
+          </td>
+          <td> <%= item.price %> </td>
+        </tr>
+        <% end %>
+
         </tbody>
       </table>
  

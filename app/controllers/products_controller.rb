@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
         flash[:notice] = "已售完，無法加入購物車"
       end
   	else
-  		flash[:warning] = "購物車內已經有此商品"
+  		flash[:notice] = "購物車內已經有此商品"
   	end
   	redirect_to product_path(@product)
   end
