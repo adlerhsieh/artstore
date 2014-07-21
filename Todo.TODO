@@ -79,3 +79,6 @@ Stripe:
  ☐ 安裝 SettingsLogic
  ☐ 把 key 放到 SettingsLogic 的 yml 裏⾯面
 
+mailgun:
+ ☐ 把 mailgun key 放到 SettingsLogic 的 yml 裏⾯面
+
