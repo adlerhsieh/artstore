@@ -1,6 +1,4 @@
-class Admin::ProductsController < ApplicationController
-	before_action :authenticate_user!, :admin_required
-
+class Admin::ProductsController < AdminController
 	def index
 		if params[:search]
 			@product = Product.where('title LIKE ?', "%#{params[:search]}%")
