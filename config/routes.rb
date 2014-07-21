@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+
   namespace :account do
     resources :orders
   end
@@ -35,6 +37,7 @@ Rails.application.routes.draw do
       get :pay_with_credit_card
       get :cancel
     end
+    resources :card_charges
   end
   root to: "products#index"
   # The priority is based upon order of creation: first created -> highest priority.

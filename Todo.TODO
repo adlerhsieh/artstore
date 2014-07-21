@@ -71,3 +71,11 @@ mailer:
  ☐ 信⽤用卡付款成功也要寄信通知
  ☐ 消費者可以透過 email 裡的連結檢視原先的 order
 
+stripe
+nkj
+bio123
+
+Stripe:
+ ☐ 安裝 SettingsLogic
+ ☐ 把 key 放到 SettingsLogic 的 yml 裏⾯面
+
