@@ -7,11 +7,11 @@ class Order < ActiveRecord::Base
 	accepts_nested_attributes_for :info
 
 	def build_item_cache_from_cart(cart)
-		cart.items.each do |cart_item|
+		cart.items.each do |product|
 			item = items.build
-			item.product_name = cart_item.title
-			item.quantity = cart_item.quantity
-			item.price = cart_item.price
+			item.product_name = product.title
+			item.quantity = product.quantity
+			item.price = product.price
 			item.save
 		end
 	end

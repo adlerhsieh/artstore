@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'letter_opener'
 gem 'aasm'
 gem "nested_form"
 gem 'simple_form'
