@@ -82,3 +82,6 @@ Stripe:
 mailgun:
  ☐ 把 mailgun key 放到 SettingsLogic 的 yml 裏⾯面
 
+整理:
+ ☐ 收納service object
+ ☐ 用 ransack 這個 gem 實作搜尋產品功能
